@@ -37,24 +37,21 @@ class MergSort {
     let n1 = m - l + 1;
     let n2 = r - m;
 
-    // Create temp arrays
     let L = new Array();
     let R = new Array();
 
-    // Copy data to temp arrays L[] and R[]
+
     for (let i = 0; i < n1; i++)
       L[i] = this.datalist[l + i];
 
     for (let j = 0; j < n2; j++)
       R[j] = this.datalist[m + 1 + j];
 
-    // Merge the temp arrays back into arr[l..r]
-    // Initial index of first subarray
+
     let i = 0;
 
-    // Initial index of second subarray
     let j = 0;
-    // Initial index of merged subarray
+
     let k = l;
     while (i < n1 && j < n2) {
       if (L[i] <= R[j]) {
@@ -66,15 +63,12 @@ class MergSort {
       }
       k++;
     }
-    // Copy the remaining elements of
-    // L[], if there are any
     while (i < n1) {
       this.datalist[k] = L[i];
       i++;
       k++;
     }
-    // Copy the remaining elements of
-    // R[], if there are any
+
     while (j < n2) {
       this.datalist[k] = R[j];
       j++;
